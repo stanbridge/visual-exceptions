@@ -2,13 +2,12 @@
 
 namespace Austinw\VisualException\Tests\Feature\Http\Controllers;
 
+use Austinw\VisualException\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
-use Austinw\VisualException\Tests\TestCase;
 
 class VisualExceptionControllerTest extends TestCase
 {
-
     public function test_it_can_return_a_stored_exception()
     {
         Storage::fake('local');

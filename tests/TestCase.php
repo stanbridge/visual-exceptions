@@ -2,8 +2,8 @@
 
 namespace Austinw\VisualException\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Austinw\VisualException\VisualExceptionServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
