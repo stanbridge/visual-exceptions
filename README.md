@@ -1,56 +1,65 @@
-# :package_description
+# Visual Laravel Exceptions for SPAs
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/:package_name.svg?style=flat-square)](https://packagist.org/packages/spatie/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/:package_name/run-tests?label=tests)](https://github.com/spatie/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/:package_name.svg?style=flat-square)](https://packagist.org/packages/spatie/:package_name)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/austinw/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/austinw/visual-exceptions)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/austinw/visual-exceptions/run-tests?label=tests)](https://github.com/austinw/visual-exceptions/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/austinw/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/austinw/visual-exceptions)
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can also run `configure-skeleton.sh` to do this automatically.
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
-## Support us
+## Support me
 
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require spatie/package-skeleton-laravel
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Spatie\Skeleton\SkeletonServiceProvider" --tag="migrations"
-php artisan migrate
+composer require austinw/visual-exceptions
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Spatie\Skeleton\SkeletonServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Austinw\VisualException\VisualExceptionServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Visual Exceptions Path
+    |--------------------------------------------------------------------------
+    |
+    | This is the URI path where visual exceptions will be accessible from.
+    |
+    */
+
+    'path' => env('VISUAL_EXCEPTIONS_PATH', 'api/visual-exceptions'),
+
+    'storage' => 'visual-exceptions/latest.html',
+
+    'clear_on_retrieve' => env('VISUAL_EXCEPTIONS_CLEAR', true),
+
+    'middleware' => ['api'],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Visual Exceptions Master Switch
+    |--------------------------------------------------------------------------
+    |
+    | This option may be used to completely disable visual exceptions.
+    |
+    */
+
+    'enabled' => env('VISUAL_EXCEPTIONS_ENABLED', true),
 ];
 ```
 
 ## Usage
 
-``` php
-$skeleton = new Spatie\Skeleton();
-echo $skeleton->echoPhrase('Hello, Spatie!');
-```
 
 ## Testing
 
@@ -68,12 +77,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email austingym@gmail.com instead of using the issue tracker.
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
-- [All Contributors](../../contributors)
+- [Austin White](https://github.com/AustinW)
 
 ## License
 

@@ -1,17 +1,15 @@
 {
-    "name": "spatie/:package_name",
-    "description": ":package_description",
+    "name": "austinw/visual-exceptions",
+    "description": "Visual Laravel exceptions delivered via iframe for single page applications",
     "keywords": [
-        "spatie",
-        ":package_name"
+        "visual-exceptions"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/spatie/visual-exceptions",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "name": "Austin White",
+            "email": "austingym@gmail.com",
             "role": "Developer"
         }
     ],
@@ -27,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Austinw\\VisualException\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Austinw\\VisualException\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "AustinW\\VisualException\\VisualExceptionServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "VisualException": "AustinW\\VisualException\\VisualExceptionFacade"
             }
         }
     },
