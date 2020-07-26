@@ -91,7 +91,7 @@ return [
 
 ## Usage
 
-1. Capture the Exception
+### 1. Capture the Exception
 
 In your `app/Exceptions/Handler.php`, capture the rendered exception with the following:
 
@@ -104,7 +104,7 @@ if (Config::get('visual-exceptions.enabled')) {
 }
 ```
 
-2. Display the Exception
+### 2. Display the Exception
 
 Publish the assets:
 `...`
