@@ -91,13 +91,7 @@ return [
 
 ## Usage
 
-### 1. Publish the config:
-`php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag=config`
-
-### 2. Publish the assets:
-`php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag=assets`
-
-### 3. Capture the Exception
+### 1. Capture the Exception
 
 In your `app/Exceptions/Handler.php`, capture the rendered exception with the following:
 
@@ -117,7 +111,10 @@ public function render($request, Throwable $exception)
 }
 ```
 
-### 4. Display the Exception
+### 2. Publish the assets:
+`php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag=assets`
+
+### 3. Display the Exception
 
 Copy the `render-exception.js` file from the published assets into your single page application.
 
