@@ -123,7 +123,7 @@ axios.interceptors.response.use(response => response, error => {
 });
 ```
 
-The code in render-exception comes from <a href="https://github.com/livewire/livewire">Livewire</a>. Thanks to
+The code in `render-exception.js` comes from <a href="https://github.com/livewire/livewire">Livewire</a>. Thanks to
 <a href="https://github.com/calebporzio">Caleb Porzio</a> and <a href="https://github.com/reinink">Jonathan Reinink</a>
 
 ## Testing
