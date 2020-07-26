@@ -1,9 +1,9 @@
 <?php
 
-namespace Austinw\VisualException\Tests\Unit;
+namespace AustinW\VisualException\Tests\Unit;
 
-use Austinw\VisualException\Tests\TestCase;
-use Austinw\VisualException\VisualException;
+use AustinW\VisualException\Tests\TestCase;
+use AustinW\VisualException\VisualException;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;

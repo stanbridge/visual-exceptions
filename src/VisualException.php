@@ -1,6 +1,6 @@
 <?php
 
-namespace Austinw\VisualException;
+namespace AustinW\VisualException;
 
 use Illuminate\Support\Facades\Storage;
 

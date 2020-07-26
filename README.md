@@ -24,7 +24,7 @@ composer require austinw/visual-exceptions
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Austinw\VisualException\VisualExceptionServiceProvider" --tag="config"
+php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -91,23 +91,33 @@ return [
 
 ## Usage
 
-### 1. Capture the Exception
+### 1. Publish the config:
+`php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag=config`
+
+### 2. Publish the assets:
+`php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag=assets`
+
+### 3. Capture the Exception
 
 In your `app/Exceptions/Handler.php`, capture the rendered exception with the following:
 
 ```php
 use \Illuminate\Support\Facades\Config;
-use Austinw\VisualException\VisualException;
+use AustinW\VisualException\VisualException;
 
-if (Config::get('visual-exceptions.enabled')) {
-    VisualException::capture($this->prepareResponse($request, $exception));
+public function render($request, Throwable $exception)
+{
+    $render = $this->prepareResponse($request, $exception);
+    
+    if (Config::get('visual-exceptions.enabled')) {
+        VisualException::capture($render);
+    }
+    
+    return $render;
 }
 ```
 
-### 2. Display the Exception
-
-Publish the assets:
-`...`
+### 4. Display the Exception
 
 Copy the `render-exception.js` file from the published assets into your single page application.
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Austinw\VisualException;
+namespace AustinW\VisualException;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -56,12 +56,12 @@ class VisualExceptionServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../public' => public_path('vendor/visual-exceptions'),
-            ], 'visual-exceptions-assets');
+                __DIR__.'/../config/visual-exceptions.php' => config_path('visual-exceptions.php'),
+            ], 'config');
 
             $this->publishes([
-                __DIR__.'/../config/visual-exceptions.php' => config_path('visual-exceptions.php'),
-            ], 'visual-exceptions-config');
+                __DIR__.'/../resources/js' => public_path('vendor/visual-exceptions'),
+            ], 'assets');
         }
     }
 

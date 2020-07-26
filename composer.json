@@ -4,7 +4,7 @@
     "keywords": [
         "visual-exceptions"
     ],
-    "homepage": "https://github.com/spatie/visual-exceptions",
+    "homepage": "https://github.com/AustinW/visual-exceptions",
     "license": "MIT",
     "authors": [
         {
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Austinw\\VisualException\\": "src"
+            "AustinW\\VisualException\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Austinw\\VisualException\\Tests\\": "tests"
+            "AustinW\\VisualException\\Tests\\": "tests"
         }
     },
     "scripts": {

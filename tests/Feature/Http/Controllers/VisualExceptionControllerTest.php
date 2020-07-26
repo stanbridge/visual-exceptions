@@ -1,8 +1,8 @@
 <?php
 
-namespace Austinw\VisualException\Tests\Feature\Http\Controllers;
+namespace AustinW\VisualException\Tests\Feature\Http\Controllers;
 
-use Austinw\VisualException\Tests\TestCase;
+use AustinW\VisualException\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 
