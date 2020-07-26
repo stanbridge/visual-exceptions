@@ -2,11 +2,9 @@
 
 namespace Austinw\VisualException\Tests\Feature\Http\Controllers;
 
-use Illuminate\Routing\Route;
-use Illuminate\Routing\Router;
+use Austinw\VisualException\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
-use Austinw\VisualException\Tests\TestCase;
 
 class VisualExceptionControllerTest extends TestCase
 {

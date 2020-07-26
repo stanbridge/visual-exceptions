@@ -14,7 +14,7 @@ class VisualExceptionServiceProvider extends ServiceProvider
      */
     public function boot() : void
     {
-        if ( ! config('visual-exceptions.enabled')) {
+        if (! config('visual-exceptions.enabled')) {
             return;
         }
 
@@ -43,7 +43,7 @@ class VisualExceptionServiceProvider extends ServiceProvider
     {
         return [
             'prefix' => config('visual-exceptions.path'),
-            'middleware' => config('visual-exceptions.middleware')
+            'middleware' => config('visual-exceptions.middleware'),
         ];
     }
 
@@ -73,7 +73,8 @@ class VisualExceptionServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/visual-exceptions.php', 'visual-exceptions'
+            __DIR__.'/../config/visual-exceptions.php',
+            'visual-exceptions'
         );
     }
 }

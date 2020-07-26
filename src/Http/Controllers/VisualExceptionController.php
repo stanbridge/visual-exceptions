@@ -3,10 +3,8 @@
 
 namespace Austinw\VisualException\Http\Controllers;
 
-use Illuminate\Support\Facades\Log;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 class VisualExceptionController extends Controller
 {
