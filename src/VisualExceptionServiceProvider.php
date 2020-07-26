@@ -4,7 +4,6 @@ namespace Austinw\VisualException;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use AustinW\VisualException\Commands\VisualExceptionCommand;
 
 class VisualExceptionServiceProvider extends ServiceProvider
 {

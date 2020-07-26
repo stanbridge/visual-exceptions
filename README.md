@@ -5,10 +5,14 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/austinw/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/austinw/visual-exceptions)
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package provides single page applications with a visual representation of exceptions similar to traditional
+Laravel applications. This is accomplished by temporarily storing the output of the rendered exception in a file. When
+the client receives an error, you can use the included `render-exception.js` service to open up an iframe to display
+the rendered exception in the browser.
+
 
 ## Support me
-
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4H6K7XTMR79VA&source=url"><img src="paypal.svg" height="72" alt="Donate" /></a>
 
 ## Installation
 
@@ -30,7 +34,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Visual Exceptions Path
+    | Master Switch
+    |--------------------------------------------------------------------------
+    |
+    | This option may be used to completely disable visual exceptions.
+    |
+    */
+
+    'enabled' => env('VISUAL_EXCEPTIONS_ENABLED', env('APP_DEBUG')),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Path
     |--------------------------------------------------------------------------
     |
     | This is the URI path where visual exceptions will be accessible from.
@@ -39,27 +54,74 @@ return [
 
     'path' => env('VISUAL_EXCEPTIONS_PATH', 'api/visual-exceptions'),
 
-    'storage' => 'visual-exceptions/latest.html',
-
-    'clear_on_retrieve' => env('VISUAL_EXCEPTIONS_CLEAR', true),
-
-    'middleware' => ['api'],
-
     /*
     |--------------------------------------------------------------------------
-    | Visual Exceptions Master Switch
+    | Storage
     |--------------------------------------------------------------------------
     |
-    | This option may be used to completely disable visual exceptions.
+    | This is where the temporary exception output will be stored.
     |
     */
 
-    'enabled' => env('VISUAL_EXCEPTIONS_ENABLED', true),
+    'storage' => 'visual-exceptions/latest.html',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Clear on Retrieve
+    |--------------------------------------------------------------------------
+    |
+    | Use this option to clear the exception file after retrieving it.
+    |
+    */
+
+    'clear_on_retrieve' => env('VISUAL_EXCEPTIONS_CLEAR', true),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Middleware
+    |--------------------------------------------------------------------------
+    |
+    | Set middleware on the route.
+    |
+    */
+
+    'middleware' => ['api'],
 ];
 ```
 
 ## Usage
 
+1. Capture the Exception
+
+In your `app/Exceptions/Handler.php`, capture the rendered exception with the following:
+
+```php
+use \Illuminate\Support\Facades\Config;
+use Austinw\VisualException\VisualException;
+
+if (Config::get('visual-exceptions.enabled')) {
+    VisualException::capture($this->prepareResponse($request, $exception));
+}
+```
+
+2. Display the Exception
+
+Publish the assets:
+`...`
+
+Copy the `render-exception.js` file from the published assets into your single page application.
+
+Import the library and use the `retrieveLastError()` method. Here is an example using an axios interceptor:
+```js
+import axios from 'axios';
+import VisualException from 'path/to/render-exception.js';
+
+axios.interceptors.response.use(response => response, error => {
+    if (error.response.status >= 500) {
+        VisualException.retrieveLastError();
+    }
+});
+```
 
 ## Testing
 

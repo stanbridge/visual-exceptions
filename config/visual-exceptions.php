@@ -4,7 +4,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Visual Exceptions Path
+    | Master Switch
+    |--------------------------------------------------------------------------
+    |
+    | This option may be used to completely disable visual exceptions.
+    |
+    */
+
+    'enabled' => env('VISUAL_EXCEPTIONS_ENABLED', env('APP_DEBUG', true)),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Path
     |--------------------------------------------------------------------------
     |
     | This is the URI path where visual exceptions will be accessible from.
@@ -13,20 +24,36 @@ return [
 
     'path' => env('VISUAL_EXCEPTIONS_PATH', 'api/visual-exceptions'),
 
-    'storage' => 'visual-exceptions/latest.html',
-
-    'clear_on_retrieve' => env('VISUAL_EXCEPTIONS_CLEAR', true),
-
-    'middleware' => ['api'],
-
     /*
     |--------------------------------------------------------------------------
-    | Visual Exceptions Master Switch
+    | Storage
     |--------------------------------------------------------------------------
     |
-    | This option may be used to completely disable visual exceptions.
+    | This is where the temporary exception output will be stored.
     |
     */
 
-    'enabled' => env('VISUAL_EXCEPTIONS_ENABLED', true),
+    'storage' => 'visual-exceptions/latest.html',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Clear on Retrieve
+    |--------------------------------------------------------------------------
+    |
+    | Use this option to clear the exception file after retrieving it.
+    |
+    */
+
+    'clear_on_retrieve' => env('VISUAL_EXCEPTIONS_CLEAR', true),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Middleware
+    |--------------------------------------------------------------------------
+    |
+    | Set middleware on the route.
+    |
+    */
+
+    'middleware' => ['api'],
 ];
