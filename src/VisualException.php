@@ -8,7 +8,7 @@ class VisualException
 {
     public static function capture($response)
     {
-        if (!config('visual-exceptions.enabled')) {
+        if (! config('visual-exceptions.enabled')) {
             return;
         }
 
