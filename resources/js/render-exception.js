@@ -1,5 +1,10 @@
+// This code comes from Livewire with minimal modification
+// Thanks to Caleb Porzio and Jonathan Reinink
+// Reference: https://github.com/livewire/livewire/blob/1.x/js/connection/drivers/http.js
 export default {
     retrieveLastError() {
+
+        // Adjust this to the url that is defined in your config
         fetch('/api/visual-exceptions/latest', {
             method: 'GET',
             // This enables "cookies".
