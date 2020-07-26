@@ -12,7 +12,7 @@ the rendered exception in the browser.
 
 
 ## Support me
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4H6K7XTMR79VA&source=url"><img src="paypal.svg" height="72" alt="Donate" /></a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4H6K7XTMR79VA&source=url"><img src="paypal.svg" height="48" alt="Donate" /></a>
 
 ## Installation
 
