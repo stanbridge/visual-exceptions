@@ -10,10 +10,6 @@ Laravel applications. This is accomplished by temporarily storing the output of 
 the client receives an error, you can use the included `render-exception.js` service to open up an iframe to display
 the rendered exception in the browser.
 
-
-## Support me
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4H6K7XTMR79VA&source=url"><img src="paypal.svg" height="48" alt="Donate" /></a>
-
 ## Installation
 
 You can install the package via composer:
