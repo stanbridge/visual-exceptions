@@ -1,3 +1,7 @@
+![logo](https://cdn.stanbridge.edu/global/img/logo--documentation.png)
+
+---
+
 # Visual Laravel Exceptions for SPAs
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stanbridge/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/stanbridge/visual-exceptions)
