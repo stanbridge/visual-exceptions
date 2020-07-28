@@ -2,8 +2,8 @@
 
 namespace Stanbridge\VisualException\Tests;
 
-use Stanbridge\VisualException\VisualExceptionServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Stanbridge\VisualException\VisualExceptionServiceProvider;
 
 class TestCase extends Orchestra
 {

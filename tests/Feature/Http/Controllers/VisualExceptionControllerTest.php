@@ -2,9 +2,9 @@
 
 namespace Stanbridge\VisualException\Tests\Feature\Http\Controllers;
 
-use Stanbridge\VisualException\Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
+use Stanbridge\VisualException\Tests\TestCase;
 
 class VisualExceptionControllerTest extends TestCase
 {

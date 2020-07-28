@@ -2,11 +2,11 @@
 
 namespace Stanbridge\VisualException\Tests\Unit;
 
-use Stanbridge\VisualException\Tests\TestCase;
-use Stanbridge\VisualException\VisualException;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
+use Stanbridge\VisualException\Tests\TestCase;
+use Stanbridge\VisualException\VisualException;
 
 class VisualExceptionTest extends TestCase
 {
