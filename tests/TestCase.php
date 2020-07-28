@@ -1,8 +1,8 @@
 <?php
 
-namespace AustinW\VisualException\Tests;
+namespace Stanbridge\VisualException\Tests;
 
-use AustinW\VisualException\VisualExceptionServiceProvider;
+use Stanbridge\VisualException\VisualExceptionServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra

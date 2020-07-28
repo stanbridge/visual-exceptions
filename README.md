@@ -1,8 +1,8 @@
 # Visual Laravel Exceptions for SPAs
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/austinw/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/austinw/visual-exceptions)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/austinw/visual-exceptions/run-tests?label=tests)](https://github.com/austinw/visual-exceptions/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/austinw/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/austinw/visual-exceptions)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/stanbridge/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/stanbridge/visual-exceptions)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/stanbridge/visual-exceptions/run-tests?label=tests)](https://github.com/stanbridge/visual-exceptions/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/stanbridge/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/stanbridge/visual-exceptions)
 
 
 This package provides single page applications with a visual representation of exceptions similar to traditional
@@ -15,12 +15,12 @@ the rendered exception in the browser.
 You can install the package via composer:
 
 ```bash
-composer require austinw/visual-exceptions
+composer require stanbridge/visual-exceptions
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Stanbridge\VisualException\VisualExceptionServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -93,7 +93,7 @@ In your `app/Exceptions/Handler.php`, capture the rendered exception with the fo
 
 ```php
 use \Illuminate\Support\Facades\Config;
-use AustinW\VisualException\VisualException;
+use Stanbridge\VisualException\VisualException;
 
 public function render($request, Throwable $exception)
 {
@@ -108,7 +108,7 @@ public function render($request, Throwable $exception)
 ```
 
 ### 2. Publish the assets:
-`php artisan vendor:publish --provider="AustinW\VisualException\VisualExceptionServiceProvider" --tag=assets`
+`php artisan vendor:publish --provider="Stanbridge\VisualException\VisualExceptionServiceProvider" --tag=assets`
 
 ### 3. Display the Exception
 

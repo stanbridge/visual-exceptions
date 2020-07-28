@@ -1,6 +1,6 @@
 <?php
 
-namespace AustinW\VisualException;
+namespace Stanbridge\VisualException;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;

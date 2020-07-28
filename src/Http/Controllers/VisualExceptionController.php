@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AustinW\VisualException\Http\Controllers;
+namespace Stanbridge\VisualException\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
