@@ -46,10 +46,7 @@
         "laravel": {
             "providers": [
                 "Stanbridge\\VisualException\\VisualExceptionServiceProvider"
-            ],
-            "aliases": {
-                "VisualException": "Stanbridge\\VisualException\\VisualExceptionFacade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
