@@ -5,7 +5,7 @@
 # Visual Laravel Exceptions for SPAs
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stanbridge/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/stanbridge/visual-exceptions)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/stanbridge/visual-exceptions/run-tests?label=tests)](https://github.com/stanbridge/visual-exceptions/actions?query=workflow%3Arun-tests+branch%3Amaster)
+![Tests](https://github.com/stanbridge/visual-exceptions/workflows/Tests/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/stanbridge/visual-exceptions.svg?style=flat-square)](https://packagist.org/packages/stanbridge/visual-exceptions)
 
 
