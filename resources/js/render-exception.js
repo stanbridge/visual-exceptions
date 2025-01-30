@@ -2,10 +2,11 @@
 // Thanks to Caleb Porzio and Jonathan Reinink
 // Reference: https://github.com/livewire/livewire/blob/1.x/js/connection/drivers/http.js
 export default {
-    retrieveLastError() {
+    retrieveLastError(clear = true) {
+        const url = `/api/visual-exceptions/latest?clear=${clear ? 'true' : 'false'}`;
 
         // Adjust this to the url that is defined in your config
-        fetch('/api/visual-exceptions/latest', {
+        fetch(url, {
             method: 'GET',
             // This enables "cookies".
             credentials: 'same-origin',
@@ -14,7 +15,9 @@ export default {
             },
         }).then(response => {
             response.text().then(content => {
-                this.showHtmlModal(content);
+                if (content) {
+                    this.showHtmlModal(content);
+                }
             });
         });
     },
