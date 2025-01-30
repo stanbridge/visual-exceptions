@@ -29,4 +29,17 @@ class VisualExceptionControllerTest extends TestCase
 
         Storage::assertMissing(config('visual-exceptions.storage'));
     }
+
+    public function test_it_can_delete_the_exception_file_after_returning_it_with_clear_query_param()
+    {
+        Storage::fake('local');
+
+        Config::set('visual-exceptions.clear_on_retrieve', 'upon-request');
+
+        Storage::put(config('visual-exceptions.storage'), 'Test Exception Response');
+
+        $this->get('api/visual-exceptions/latest?clear=true')->assertSuccessful()->assertSee('Test Exception Response');
+
+        Storage::assertMissing(config('visual-exceptions.storage'));
+    }
 }
